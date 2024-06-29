@@ -37,5 +37,8 @@ data:
         description: Name of the resource, but if the name is too long it is split after 15 character which is represented by the '~' character.
 ```
 
+- Keep in mind that all data of each resource is offset by the sizeof the header and DataOffset.
+- So for example if we want to get NameUID and essentially DataOffset is 0 the NameUID would be at 0x28.
+
 ## Parsing the perm file with multiple resources
-- Header contains size which can be read and offset by size of header to get to next `qResourceData` (mSize + 0x10)
+- Header contains size which can be read and offset by size of header to get to next `qResourceData` (Size + 0x10)
